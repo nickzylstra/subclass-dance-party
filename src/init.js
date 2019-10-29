@@ -23,23 +23,40 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = new dancerMakerFunction(
+    var newDancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
-    $('body').append(dancer.$node);
-    // for each existing dancer
-      // add a relationship for dancer and existing dancer to farDancerRelationships
+    $('body').append(newDancer.$node);
+    // for each existing newDancer
+    window.dancers.forEach((existingDancer) => {
+      // add a relationship for newDancer and existing dancer to farDancerRelationships
+      const relationship = new DancerRelationship(existingDancer, newDancer);
+      window.farDancerRelationships.push(relationship);
+    });
+    window.dancers.push(newDancer);
   });
+
   window.updateDancerRelationships = function() {
-    // the basic dancer doesn't do anything interesting at all on each step,
-    // it just schedules the next step
+    const farCloseDistanceThreshold = 200;
+    window.farDancerRelationships.forEach((relationship, index, list) => {
+      if (relationship.distance < farCloseDistanceThreshold) {
+        closeDancersRelationships.push(relationship);
+        list.splice(index, 1);
+        relationship.dancerOne.$node.addClass('closeDancer');
+        relationship.dancerTwo.$node.addClass('closeDancer');
+      }
+    });
+    window.closeDancersRelationships.forEach((relationship, index, list) => {
+
+    });
 
     var time = 100;
     setTimeout(window.updateDancerRelationships, time);
   };
-  // window.updateDancerRelationships();
+  
+  window.updateDancerRelationships();
   // $('.dancer').on('click', function(event) {
   //   console.log('hi');
   // });

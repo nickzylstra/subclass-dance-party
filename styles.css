@@ -22,7 +22,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:10px solid orange;
   border-radius:10px;
   position:absolute;
 }
@@ -37,4 +37,7 @@ body, a:link, a:visited, a:active{
 }
 .dancer:hover{
   border: 10px solid blue;
+}
+.closeDancer{
+  border: 10px solid red;
 }
