@@ -27,6 +27,11 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .blinkyDancer{
-  /* background: url('images/dancer1.png'); */
+  border-style: none;
+}
+.wallflowerDancer{
+  border-style: none;
+}
+.circleDancer{
   border-style: none;
 }

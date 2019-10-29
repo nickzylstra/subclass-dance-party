@@ -2,6 +2,8 @@ var WallflowerDancer = function(top, left, timeBetweenSteps) {
   // var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
   Dancer.call(this, top, left, timeBetweenSteps);
   // debugger;
+  this.$node.addClass('wallflowerDancer');
+  this.$node.append('<img src="images/wallflower.png" height="75" width="75"></img>');
   this.oldStep = Dancer.prototype.step;
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,

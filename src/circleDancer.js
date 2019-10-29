@@ -2,6 +2,8 @@ var CircleDancer = function(top, left, timeBetweenSteps) {
   // var blinkyDancer = makeDancer(top, left, timeBetweenSteps);
   Dancer.call(this, top, left, timeBetweenSteps);
   // debugger;
+  this.$node.addClass('circleDancer');
+  this.$node.append('<img src="images/circle.png" height="75" width="75"></img>');
   this._oldStep = Dancer.prototype.step;
   this._startTop = top;
   this._startLeft = left;

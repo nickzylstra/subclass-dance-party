@@ -3,7 +3,7 @@ var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
   // this.$node = $('<span class="dancer blinkyDancer"></span>');
   this.$node.addClass('blinkyDancer');
-  this.$node.append('<img src="images/dancer1.png" height="75" width="75"></img>');
+  this.$node.append('<img src="images/blinky.png" height="75" width="75"></img>');
   this.oldStep = Dancer.prototype.step;
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
