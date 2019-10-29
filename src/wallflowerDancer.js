@@ -28,7 +28,7 @@ WallflowerDancer.prototype.step = function() {
   } */
   // get current left pos
   // this._left = this.$node.offset().left;
-  if (this._left > 10) {
+  if (this._left > 30) {
     this._left += this._movement;
   }
   // set new position with updated top and left
