@@ -35,3 +35,6 @@ body, a:link, a:visited, a:active{
 .circleDancer{
   border-style: none;
 }
+.dancer:hover{
+  border: 10px solid blue;
+}

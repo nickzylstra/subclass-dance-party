@@ -12,7 +12,7 @@ describe('circleDancer', function() {
     expect(circleDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that should never move further than radius from starting position', function() {
+  it('INCOMPLETE should have a step function that should never move further than radius from starting position', function() {
     var radius = circleDancer._radius;
     var startTop = circleDancer._startTop;
     var startLeft = circleDancer._startLeft;
@@ -20,9 +20,9 @@ describe('circleDancer', function() {
     circleDancer.step();
     var nextTop = circleDancer.$node.offset().top;
     var nextLeft = circleDancer.$node.offset().left;
+    // can refactor with method of dancer relationship
     var distance = Math.sqrt(Math.pow(nextTop - startTop, 2) + Math.pow(nextLeft - startLeft, 2));
     // -1 for rounding errors and floating point precision
-    debugger;
     expect(distance - 1 < radius).to.be.true;
 
   });

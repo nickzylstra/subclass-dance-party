@@ -1,6 +1,7 @@
 $(document).ready(function() {
   window.dancers = [];
-
+  window.farDancerRelationships = [];
+  window.closeDancersRelationships = [];
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -28,6 +29,19 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    // for each existing dancer
+      // add a relationship for dancer and existing dancer to farDancerRelationships
   });
+  window.updateDancerRelationships = function() {
+    // the basic dancer doesn't do anything interesting at all on each step,
+    // it just schedules the next step
+
+    var time = 100;
+    setTimeout(window.updateDancerRelationships, time);
+  };
+  // window.updateDancerRelationships();
+  // $('.dancer').on('click', function(event) {
+  //   console.log('hi');
+  // });
 });
 

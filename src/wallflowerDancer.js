@@ -4,8 +4,8 @@ var WallflowerDancer = function(top, left, timeBetweenSteps) {
   // debugger;
   this.$node.addClass('wallflowerDancer');
   this.$node.append('<img src="images/wallflower.png" height="75" width="75"></img>');
-  this._left = left;
-  this._top = top;
+  // this._left = left;
+  // this._top = top;
   this._movement = -20;
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,

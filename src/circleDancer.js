@@ -4,8 +4,8 @@ var CircleDancer = function(top, left, timeBetweenSteps) {
   // debugger;
   this.$node.addClass('circleDancer');
   this.$node.append('<img src="images/circle.png" height="75" width="75"></img>');
-  this._startTop = top;
-  this._startLeft = left;
+  // this._startTop = top;
+  // this._startLeft = left;
   this._radius = Math.random() * 100;
   this._angle = 0;
   this._anglestep = Math.PI * 2 * 20 / 360;
@@ -25,5 +25,5 @@ CircleDancer.prototype.step = function() {
   this._angle += this._anglestep;
   var dy = Math.sin(this._angle) * this._radius;
   var dx = Math.cos(this._angle) * this._radius;
-  this.setPosition(this._startTop + dy, this._startLeft + dx);
+  this.setPosition(this._top + dy, this._left + dx);
 };
