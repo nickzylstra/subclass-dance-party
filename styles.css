@@ -3,7 +3,8 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  /* background-color:#444; */
+  background-image: url("https://www.daybreaker.com/wp-content/uploads/2017/10/SF-Halloween-3.jpg");
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -24,4 +25,7 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.blinkyDancer{
+  background: url("https://cdn3.iconfinder.com/data/icons/solid-locations-icon-set/64/Dance_instructor_2-512.png")
 }
