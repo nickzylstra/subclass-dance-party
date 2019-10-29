@@ -40,7 +40,9 @@ $(document).ready(function() {
 
   window.updateDancerRelationships = function() {
     const farCloseDistanceThreshold = 200;
+
     window.farDancerRelationships.forEach((relationship, index, list) => {
+      relationship.updateDistance();
       if (relationship.distance < farCloseDistanceThreshold) {
         closeDancersRelationships.push(relationship);
         list.splice(index, 1);
@@ -48,14 +50,21 @@ $(document).ready(function() {
         relationship.dancerTwo.$node.addClass('closeDancer');
       }
     });
-    window.closeDancersRelationships.forEach((relationship, index, list) => {
 
+    window.closeDancersRelationships.forEach((relationship, index, list) => {
+      relationship.updateDistance();
+      if (relationship.distance > farCloseDistanceThreshold) {
+        farDancerRelationships.push(relationship);
+        list.splice(index, 1);
+        relationship.dancerOne.$node.removeClass('closeDancer');
+        relationship.dancerTwo.$node.removeClass('closeDancer');
+      }
     });
 
     var time = 100;
     setTimeout(window.updateDancerRelationships, time);
   };
-  
+
   window.updateDancerRelationships();
   // $('.dancer').on('click', function(event) {
   //   console.log('hi');
