@@ -4,7 +4,6 @@ var CircleDancer = function(top, left, timeBetweenSteps) {
   // debugger;
   this.$node.addClass('circleDancer');
   this.$node.append('<img src="images/circle.png" height="75" width="75"></img>');
-  this._oldStep = Dancer.prototype.step;
   this._startTop = top;
   this._startLeft = left;
   this._radius = Math.random() * 100;
@@ -19,7 +18,7 @@ CircleDancer.prototype.constructor = CircleDancer;
 
 CircleDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
-  this._oldStep();
+  Dancer.prototype.step.call(this);
   // toggle() is a jQuery method to show/hide the <span> tag.
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
