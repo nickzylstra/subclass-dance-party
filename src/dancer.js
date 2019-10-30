@@ -32,3 +32,13 @@ Dancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+Dancer.prototype.lineUp = function() {
+  const linePosition = 800;
+  var lineUpSpeed = 50;
+  if (this._left < linePosition) {
+    this._left += lineUpSpeed;
+    this.setPosition(this._top, this._left);
+    setTimeout(this.lineUp.bind(this), this.timeBetweenSteps);
+  }
+};

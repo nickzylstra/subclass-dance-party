@@ -69,5 +69,18 @@ $(document).ready(function() {
   // $('.dancer').on('click', function(event) {
   //   console.log('hi');
   // });
+  $('.lineUpButton').on('click', function(event) {
+    // var lineUpFunctionName = $(this).data('line-up-function-name');
+    // var dancerMakerFunction = window[lineUpFunctionName];
+
+
+    window.dancers.forEach((existingDancer) => {
+      if (existingDancer instanceof WallflowerDancer) {
+        existingDancer._movement = 0;
+      }
+      existingDancer.lineUp();
+    });
+
+  });
 });
 
