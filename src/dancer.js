@@ -34,6 +34,7 @@ Dancer.prototype.setPosition = function(top, left) {
 };
 
 Dancer.prototype.lineUp = function() {
+  // calculate based off right side of screen
   const linePosition = 800;
   var lineUpSpeed = 50;
   if (this._left < linePosition) {

@@ -5,7 +5,7 @@ describe('wallflowerDancer', function() {
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    wallflowerDancer = new WallflowerDancer(10, 20, timeBetweenSteps);
+    wallflowerDancer = new WallflowerDancer(10, 200, timeBetweenSteps);
   });
 
   it('should have a jQuery $node object', function() {

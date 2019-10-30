@@ -5,7 +5,7 @@ describe('circleDancer', function() {
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    circleDancer = new CircleDancer(10, 20, timeBetweenSteps);
+    circleDancer = new CircleDancer(100, 200, timeBetweenSteps);
   });
 
   it('should have a jQuery $node object', function() {
@@ -14,12 +14,15 @@ describe('circleDancer', function() {
 
   it('INCOMPLETE should have a step function that should never move further than radius from starting position', function() {
     var radius = circleDancer._radius;
-    var startTop = circleDancer._startTop;
-    var startLeft = circleDancer._startLeft;
+    var startTop = circleDancer._top;
+    var startLeft = circleDancer._left;
     circleDancer.step();
     circleDancer.step();
-    var nextTop = circleDancer.$node.offset().top;
-    var nextLeft = circleDancer.$node.offset().left;
+    circleDancer.step();
+    var nodeLoc = circleDancer.$node.offset();
+    var nextTop = nodeLoc.top;
+    var nextLeft = nodeLoc.left;
+    debugger;
     // can refactor with method of dancer relationship
     var distance = Math.sqrt(Math.pow(nextTop - startTop, 2) + Math.pow(nextLeft - startLeft, 2));
     // -1 for rounding errors and floating point precision
