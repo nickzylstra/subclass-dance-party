@@ -22,7 +22,6 @@ describe('circleDancer', function() {
     var nodeLoc = circleDancer.$node.offset();
     var nextTop = nodeLoc.top;
     var nextLeft = nodeLoc.left;
-    debugger;
     // can refactor with method of dancer relationship
     var distance = Math.sqrt(Math.pow(nextTop - startTop, 2) + Math.pow(nextLeft - startLeft, 2));
     // -1 for rounding errors and floating point precision
